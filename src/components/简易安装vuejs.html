@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>简易安装 Vue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+</head>
+
+<!-- 数据驱动试图 -->
+<!-- <body>
+  <div id="app">
+    公众号:{{ name }}
+  </div>
+  <script>
+    let vm = new Vue({
+      el : "#app",
+      data: {
+        name: "web前端教程"
+      }
+    })
+  </script>
+</body> -->
+<!-- 双向绑定(数据可以驱动视图,用户的操作也可以更新model层的数据) -->
+<!-- <body>
+  <div id="app">
+    <input v-model="number">
+    <p>数字:{{ number }}</p>
+  </div>
+  <script>
+    let vm=new Vue({
+      el:"#app",
+      data:{
+        number:"",
+      }
+    })
+
+  </script>
+</body> -->
+<!-- 组件化，把特定的区域块抽出来，并封装成一个可复用的组件 -->
+
+<body>
+  <div id="app">
+    <card></card>
+    <card></card>
+    <card></card>
+  </div>
+  <script>
+    Vue.component('card', {
+      template: `<div>
+        <img src="/assets/logo.png" alt="">
+        <h2>web前端教程</h2>
+        <p>这里是描述，很长的描述</p>
+        <button>我是按钮</button>
+      </div>`
+    })
+    new Vue({
+      el: "#app"
+    })
+
+  </script>
+
+  <body>
+
+</html>

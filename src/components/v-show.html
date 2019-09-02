@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>选项卡</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+  <style>
+    li {
+      list-style: none;
+      float: left;
+      margin-right: 20px;
+
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <ul>
+      <li v-for="(item,index) in list" @click="tab(index)">{{item.tab}}
+        <div v-show="item.show">
+          {{item.title}}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script>
+    let obj = [{
+        "tab": "选项一",
+        "show": true,
+        "title": "1111"
+      },
+      {
+        "tab": "选项二",
+        "show": false,
+        "title": "2222"
+      },
+      {
+        "tab": "选项三",
+        "show": false,
+        "title": "3333"
+      }
+    ];
+
+    var vm = new Vue({
+      el: ".app",
+      data: {
+        list: obj
+      },
+      methods: {
+        tab: function (index) {
+
+          for (var i = 0; i < this.list.length; i++) {
+            this.list[i].show = false;
+            if (i == index) {
+              this.list[index].show = true;
+            }
+          }
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>

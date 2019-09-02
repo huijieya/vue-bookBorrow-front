@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>flex-box练习</title>
+    <style>
+      .box {
+          display: -webkit-flex;
+          display: flex;
+          flex-direction: row;
+          flex-wrap:nowrap;
+          justify-content: flex-start;
+          align-items: stretch;
+          align-content: flex-start;
+      }
+      .flex-box{
+          height:200px;
+          width:500px;
+          background-color:#ddd;
+          border:1px solid #fff;
+      }
+      .box1 .flex-box{
+          background-color:#E0BCDB;
+      }
+      .box2 .flex-box{
+          background-color:#E0B6B6;
+          width:800px;
+      }
+      .left{
+        /* 空间不足时不允许左侧缩小 */
+          flex-shrink:0;
+      }
+      .box3 .flex-box{
+          background-color:#ABD9E0;
+            width:900px;
+      }
+      .box4{
+        /* 空间不足换行 */
+          flex-wrap: wrap;
+      }
+      .box4 .flex-box{
+          background-color:#dadada;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <h1>不等宽不等高（定宽） </h1>
+        <div class="box box1">
+          <div class="flex-box" style="width:100px;height:100px;">1</div>
+          <div class="flex-box" style="width:250px;height:250px;">3</div>
+          <div class="flex-box" style="width:200px;height:200px;">2</div>
+          <div class="flex-box" style="width:350px;height:350px;">5</div>
+          <div class="flex-box" style="width:400px;height:400px;">4</div>
+          <div class="flex-box" style="width:500px;height:500px;">7</div>
+          <div class="flex-box" style="width:450px;height:450px;">6</div>
+        </div>
+      <h1>不等宽 等高（定宽+变宽）</h1>
+        <div class="box box2">
+          <div class="left flex-box">left</div>
+          <div class="center flex-box">center</div>
+          <div class="right flex-box">right</div>
+        </div>
+      <h1>等宽 等高（变宽） </h1>
+        <div class="box box3">
+          <div class="flex-box">1</div>
+          <div class="flex-box">2</div>
+          <div class="flex-box">3</div>
+        </div>
+      <h1>等宽不等高 （定宽） </h1>
+        <div class="box box4">
+          <div class="flex-box" style="height:100px;">1</div>
+          <div class="flex-box" style="height:250px;">2</div>
+          <div class="flex-box" style="height:400px;">3</div>
+          <div class="flex-box" style="height:350px;">4</div>
+          <div class="flex-box" style="height:300px;">5</div>
+          <div class="flex-box" style="height:500px;">6</div>
+          <div class="flex-box" style="height:450px;">7</div>
+        </div>
+    </div>
+</body>
+</html>
