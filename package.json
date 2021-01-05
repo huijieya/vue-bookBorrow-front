@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "ajv": "^5.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "better-scroll": "^1.14.1",
     "qs-stringify": "^1.1.0",
     "vant": "^1.6.18",
